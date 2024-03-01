@@ -1,0 +1,99 @@
+//MÉTODO DE BISECCIÓN 
+
+//EJERCICIO 1
+public class BisectionMethod {
+
+    public static double function(double x) {
+        return x * x - 4; // Función: f(x) = x^2 - 4
+    }
+
+    public static double bisection(double a, double b, double tolerance) {
+        double fa = function(a);
+        double fb = function(b);
+        double c = 0;
+
+        while ((b - a) > tolerance) {
+            c = (a + b) / 2;
+            double fc = function(c);
+
+            if (fc == 0) {
+                break;
+            } else if (fa * fc < 0) {
+                b = c;
+                fb = fc;
+            } else {
+                a = c;
+                fa = fc;
+            }
+        }
+        return c;
+    }
+
+    public static void main(String[] args) {
+        double a = 0;
+        double b = 3;
+        double tolerance = 0.0001;
+        double root = bisection(a, b, tolerance);
+        System.out.println("Root: " + root);
+    }
+}
+//EJERCICIO 2
+public class BisectionMethod {
+
+    public static double function(double x) {
+        return Math.sin(x) - x / 2; // Función: f(x) = sin(x) - x/2
+    }
+
+    public static void main(String[] args) {
+        double a = 1;
+        double b = 2;
+        double tolerance = 0.0001;
+        double root = bisection(a, b, tolerance);
+        System.out.println("Root: " + root);
+    }
+}
+//EJERCICIO 3
+public class BisectionMethod {
+
+    public static double function(double x) {
+        return Math.exp(x) - x * x; // Función: f(x) = e^x - x^2
+    }
+
+    public static void main(String[] args) {
+        double a = 0;
+        double b = 2;
+        double tolerance = 0.0001;
+        double root = bisection(a, b, tolerance);
+        System.out.println("Root: " + root);
+    }
+}
+//EJERCICIO 4
+public class BisectionMethod {
+
+    public static double function(double x) {
+        return Math.pow(x, 3) - 2 * x - 5; // Función: f(x) = x^3 - 2x - 5
+    }
+
+    public static void main(String[] args) {
+        double a = 2;
+        double b = 3;
+        double tolerance = 0.0001;
+        double root = bisection(a, b, tolerance);
+        System.out.println("Root: " + root);
+    }
+}
+//EJERCICIO 5
+public class BisectionMethod {
+
+    public static double function(double x) {
+        return Math.cos(x) - x; // Función: f(x) = cos(x) - x
+    }
+
+    public static void main(String[] args) {
+        double a = 0;
+        double b = 1;
+        double tolerance = 0.0001;
+        double root = bisection(a, b, tolerance);
+        System.out.println("Root: " + root);
+    }
+}
